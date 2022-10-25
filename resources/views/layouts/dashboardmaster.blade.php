@@ -409,7 +409,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
 														<div class="fw-bolder d-flex align-items-center fs-5">{{ auth()->user()->name}}
-														<span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Super Admin</span></div>
+														<span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">{{Str::title(auth()->user()->role)}}</span></div>
 														<a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{ auth()->user()->email}}</a>
 													</div>
 													<!--end::Username-->
