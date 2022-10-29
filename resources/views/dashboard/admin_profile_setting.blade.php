@@ -176,7 +176,7 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Full Name</label>
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Full Name</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8">
@@ -196,7 +196,7 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Email</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row fv-plugins-icon-container">
@@ -210,6 +210,92 @@
                     <!--begin::Actions-->
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                    </div>
+                    <!--end::Actions-->
+                <input type="hidden"><div></div></form>
+                <!--end::Form-->
+            </div>
+            <!--end::Content-->
+            <!--begin::Content-->
+            <div id="kt_account_settings_profile_details" class="collapse show">
+                <!--begin::Form-->
+                <form action="{{route('admin.password')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <!--begin::Card body-->
+                    <div class="card-body border-top p-9">
+                        <!--begin::Input group-->
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Current Password</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <!--begin::Row-->
+                                <div class="row">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-12 fv-row fv-plugins-icon-container">
+                                        <input type="password" name="current_password" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                    <div class="fv-plugins-message-container invalid-feedback">
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger mt-2">
+                                                @foreach ($errors->all() as $error )
+                                                    <li>{{$error}}</li>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                    </div></div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">New Password</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <!--begin::Row-->
+                                <div class="row">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-12 fv-row fv-plugins-icon-container">
+                                        <input type="password" name="password" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                    <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Confirm Password</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <!--begin::Row-->
+                                <div class="row">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-12 fv-row fv-plugins-icon-container">
+                                        <input type="password" name="password_confirmation" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0">
+                                    <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
+                    <!--begin::Actions-->
+                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+                        <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Change Password</button>
                     </div>
                     <!--end::Actions-->
                 <input type="hidden"><div></div></form>

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -34,5 +35,22 @@ class ProfileController extends Controller
             ]);
         }
         return back()->with('success','Profile Updated Successfully.');
+    }
+    public function admin_password(Request $request)
+    {
+        $request->validate([
+            'current_password'=>'required',
+            'password'=>'required|confirmed|different:current_password|',
+            'password_confirmation'=>'required',
+        ]);
+            if (Hash::check($request->current_password, auth()->user()->password)){
+                User::find(auth()->id())->update([
+                    'password'=>bcrypt($request->password),
+                ]);
+                return back()->with('success','Password Changed Successfully ');
+            }
+            else{
+                return back()->withErrors('Your provided current password does not matched!');
+            };
     }
 }

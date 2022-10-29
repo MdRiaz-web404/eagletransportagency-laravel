@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TruckController;
-
+use App\Http\Controllers\BusinessController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,12 +30,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/profile', [App\Http\Controllers\ProfileController::class, 'admin_profile'])->name('admin.profile');
     Route::get('profile/setting', [App\Http\Controllers\ProfileController::class, 'admin_profile_setting'])->name('admin.profile.setting');
     Route::post('profile/setting', [App\Http\Controllers\ProfileController::class, 'admin_profile_setting_post'])->name('admin.profile.setting.post');
+    Route::post('admin/password/change', [App\Http\Controllers\ProfileController::class, 'admin_password'])->name('admin.password');
     //RoleController
     Route::resource('role', RoleController::class);
     //StaffController
     Route::resource('staff', StaffController::class);
     //TruckController
     Route::resource('truck', TruckController::class);
+    //BusinessController
+    Route::resource('business', BusinessController::class);
 });
 
 
