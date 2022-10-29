@@ -28,6 +28,8 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     //ProfileController
     Route::get('/admin/profile', [App\Http\Controllers\ProfileController::class, 'admin_profile'])->name('admin.profile');
+    Route::get('profile/setting', [App\Http\Controllers\ProfileController::class, 'admin_profile_setting'])->name('admin.profile.setting');
+    Route::post('profile/setting', [App\Http\Controllers\ProfileController::class, 'admin_profile_setting_post'])->name('admin.profile.setting.post');
     //RoleController
     Route::resource('role', RoleController::class);
     //StaffController

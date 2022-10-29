@@ -12,7 +12,7 @@
                 <!--begin::Table-->
                 <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4" id="stafdatatable">
                     <!--begin::Table head-->
-                    <thead>
+                    <thead class="bg-primary text-light">
                         <tr class="border-0">
                             <th class="p-0 min-w-50px">SL</th>
                             <th class="p-0 min-w-250px">Staff</th>
@@ -35,8 +35,9 @@
                                         <!--begin::Name-->
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{$staff_detail->name}}</a>
-                                            <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
-                                            <span class="text-dark">Mobile</span>: {{$staff_detail->mobile_number}}</a>
+                                            <a href="#" class="text-hover-primary fw-bold text-muted d-block fs-7">
+                                            <span class="text-dark">Mobile</span>: {{$staff_detail->mobile_number}}</a> <br>
+                                            <a href="#" class="text-hover-primary fw-bold text-muted d-block fs-7"><span class="text-dark">Position</span>: {{role($staff_detail->id)}}</a>
                                         </div>
                                         <!--end::Name-->
                                     </div>
@@ -85,7 +86,7 @@
                                 </td>
                             </tr>
                         @empty
-                            
+
                         @endforelse
                     </tbody>
                     <!--end::Table body-->
