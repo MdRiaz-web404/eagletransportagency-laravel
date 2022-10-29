@@ -37,6 +37,8 @@
                                             <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{$truck->realtionwithstaff->name}}</a>
                                             <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
                                             <span class="text-dark">Mobile</span>: {{$truck->realtionwithstaff->mobile_number}}</a>
+                                            <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
+                                            <span class="text-dark">Truck Number: </span>: {{$truck->truck}}</a>
                                         </div>
                                         <!--end::Name-->
                                     </div>

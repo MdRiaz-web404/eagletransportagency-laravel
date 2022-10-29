@@ -36,7 +36,7 @@
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{$staff_detail->name}}</a>
                                             <a href="#" class="text-hover-primary fw-bold text-muted d-block fs-7">
-                                            <span class="text-dark">Mobile</span>: {{$staff_detail->mobile_number}}</a> <br>
+                                            <span class="text-dark">Mobile</span>: {{$staff_detail->mobile_number}}</a>
                                             <a href="#" class="text-hover-primary fw-bold text-muted d-block fs-7"><span class="text-dark">Position</span>: {{role($staff_detail->id)}}</a>
                                         </div>
                                         <!--end::Name-->

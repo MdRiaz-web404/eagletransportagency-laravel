@@ -7,7 +7,7 @@ use App\Models\Role;
 use App\Models\Truck;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class TruckController extends Controller
 {
